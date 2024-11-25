@@ -1,0 +1,47 @@
+/* Setting all elements to use the border-box sizing model to make sizing easier. */
+   *,
+   *::before,
+   *::after {
+	   box-sizing: border-box; 
+   }
+   
+   /* height border and background color */
+   .column {
+	   height: 200px; 
+	   border: 1px solid #000; 
+   } 
+   
+   /* padding for the text */
+   .column p {
+	   padding: 0.5rem; 
+   }
+   
+   .column:nth-of-type(even) {
+	   background-color: #333; 
+	   color: #FFF; 
+   }
+   
+   .column:nth-of-type(odd) {
+	   background-color: #AAA; 
+   }
+   
+   .grid {
+	   display: grid; /* make the display a grid layout */
+	   gap: 1rem; /* Adds space between columns */
+   }
+   
+/* screen size responsiveness */
+   
+   /* for screens 40rem wide or larger (around 640px) */
+   @media (min-width: 40rem) {
+	   .grid {
+		   grid-template-columns: repeat(3, 1fr); /* 1fr means each column is equal width */
+	   }
+   }
+   
+   @media (min-width: 60rem) {
+	   .grid {
+		   grid-template-columns: repeat(6, 1fr); /* Six equal columns on larger screens */
+	   }
+   }
+   
